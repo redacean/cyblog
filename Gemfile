@@ -15,3 +15,6 @@ group :jekyll_plugins do
   gem "jekyll-include-cache"
   gem "jekyll-algolia"
 end
+
+# needed for: bundle exec jekyll serve
+gem "webrick"
