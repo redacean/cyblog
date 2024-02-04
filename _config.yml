@@ -21,7 +21,7 @@ github_username: redacean
 minimal_mistakes_skin: default
 search: true
 
-url: "https://www.redacean.com"
+url: "https://redacean.com"
 baseurl: ""
 
 # Build settings
@@ -64,7 +64,7 @@ author:
   links:
     - label: "Website"
       icon: "fas fa-fw fa-link"
-      url: "https://www.redacean.com"
+      url: "https://redacean.com"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
       url: "https://twitter.com/redacean"
