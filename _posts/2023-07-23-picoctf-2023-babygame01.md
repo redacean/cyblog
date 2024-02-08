@@ -1,6 +1,7 @@
 ---
 title: "babygame01 -- picoCTF 2023"
 excerpt_separator: "<!--more-->"
+toc: true
 categories:
   - CTF Writeups
 tags:

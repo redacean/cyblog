@@ -1,6 +1,7 @@
 ---
 title: "RISC-V Smash Baby -- Hack-A-Sat Qualifier 2023"
 excerpt_separator: "<!--more-->"
+toc: true
 categories:
   - CTF Writeups
 tags:
