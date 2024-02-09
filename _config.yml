@@ -24,6 +24,7 @@ locale: "en-GB"
 name: Nicolas Bayle
 title_separator: "|"
 subtitle: "CTF • Security • Dev"
+show_drafts: false
 
 url: "https://redacean.com"
 baseurl: ""
