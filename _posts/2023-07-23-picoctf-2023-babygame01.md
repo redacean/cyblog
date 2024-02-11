@@ -1,10 +1,21 @@
 ---
-title: babygame01 - picoCTF 2023
-categories: [ 2023 Writeups, picoCTF 2023 ]
-tags: [ binary exploitation, overflow, writeup, picoctf ]
+title: "babygame01 -- picoCTF 2023"
+excerpt_separator: "<!--more-->"
+toc: true
+categories:
+  - CTF Writeups
+tags:
+  - ctf
+  - binary exploitation
+  - pwn
+  - overflow
+  - writeup
+  - picoctf
 ---
 
 Hello fellow hackers! Today we are attempting the [babygame01](https://play.picoctf.org/practice/challenge/345?category=6&originalEvent=72&page=1) challenge from picoCTF 2023. This is a binary exploitation challenge that involves underflowing a buffer to modify a value on the stack to satisfy the condition of an if statement.
+
+<!--more-->
 
 ## Getting Started
 
@@ -189,10 +200,9 @@ No checks are implemented to verify the validity of the player position in the `
 
 The values of the vertical and horizontal positions that will lead to modifying the `num_flags` variable are now to be determined. From looking at the structure of the stack of the `main` function in the figure below, the grid array starts at position `-0xaa0` and the `num_flags` variable starts at position `-0xaa4`. Recalling the decompilation of the main function, the if statement checks if the byte stored in the `num_flags` variable is a null byte. As a result, the byte located at address `-0xaa4` has to be set to a non-null byte to pass the check. As the grid is a `char` array, this can be achieved by setting the element at index -4 to a non-zero value. This corresponds to the player position (0, -4) — as _-4 = (0 * number of columns) + (-4)_.
 
-<!-- in order to override the `num_flags` variable, the player position has to be set to (vertical position, horizontal position) = (0, -4). This leads to the following equivalent code: `grid[-1] = (int)('@')`. -->
+<!-- in order to override the `num_flags` variable, the player position has to be set to (vertical position, horizontal position) = (0, -4). This leads to the following equivalent code: `grid[-1] = (int)('@')`.
 
-![main function stack](/assets/2023-07-23-picoctf-2023-babygame01/main_stack.png)
-_`main` Function Stack from Ghidra_
+![main function stack from ghidra](/assets/2023-07-23-picoctf-2023-babygame01/main_stack.png)
 
 ### Exploitation
 
@@ -203,3 +213,4 @@ wwwwaaaaaaaap
 ```
 
 One should note that, when the position (0, -4) is reached, the `num_flags` variable is set to 64. This is due to the player position being represented by the character `@` which has an ASCII encoding value of 64. If this character is changed to a different value, the `num_flags` variable will take the value of the ASCII encoding of the new character.
+

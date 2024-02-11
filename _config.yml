@@ -18,8 +18,14 @@ email: redacean@proton.me
 description: Cyber Security blog articles.
 twitter_username: redacean
 github_username: redacean
-minimal_mistakes_skin: default
+minimal_mistakes_skin: dirt #default
 search: true
+locale: "en-GB"
+name: Nicolas Bayle
+title_separator: "|"
+subtitle: "CTF • Security • Dev"
+show_drafts: false
+#excerpt_separator: ""
 
 url: "https://redacean.com"
 baseurl: ""
