@@ -23,7 +23,7 @@ search: true
 locale: "en-GB"
 name: Nicolas Bayle
 title_separator: "|"
-subtitle: "CTF • Security • Dev"
+#subtitle: "CTF • Security • Dev"
 show_drafts: false
 repository: redacean/cyblog
 #excerpt_separator: ""
@@ -39,6 +39,7 @@ permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
 paginate_path: /page:num/
 timezone: GB
+permalink: /posts/:categories/:title
 
 include:
   - _pages
@@ -67,7 +68,7 @@ plugins:
 author:
   name   : "Redacean"
   avatar : "/assets/images/bio-photo.png"
-  bio    : "Cyber Security Enthusiast"
+  bio    : "CTF • Dev • Security Research"
   links:
     - label: "Website"
       icon: "fas fa-fw fa-link"
